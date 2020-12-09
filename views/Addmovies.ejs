@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>List of Movies</title>
+</head>
+<body>
+    <div class="table-data">
+<h2>Display Data using Node.js & MySQL</h2>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>movie id</th>
+            <th>release year</th>
+            <th>rating</th>
+            
+        </tr>
+        
+        <%
+        if(movieData.length!=0){
+        var i=1;
+        movieData.forEach(function(data){
+        %>
+        <tr>
+           
+            <td><%=data.name %></td>
+            <td><%=data.movie_id %></td>
+            <td><%=data.release_year %></td>
+            <td><%=data.rating %></td>
+            
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>
